@@ -11,7 +11,7 @@ const HeroSection = () => {
         <p className="text-[18px] lg:text-black text-green-400">
           Grow your business and boost revenue with an easy, affordable platform
           that brings email,
-          <br /> automation, online courses and paid newsletters together.
+          <br /> automation, online courses and paid newsletters togethers.
         </p>
 
         <button className="bg-[#fbe30c]  px-8 py-4 rounded-3xl font-bold w-fit">
