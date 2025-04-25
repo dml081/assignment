@@ -3,7 +3,7 @@ const HeroSection = () => {
     <section className="h-screen flex flex-col justify-center items-center px-4">
       <div className="text-center space-y-7">
         <p className="lg:text-[#717171] text-red-400 text-capitalize text-[14px]">
-          ALL-IN-ONE MARKETING SOFTWARE
+          ALL-IN-ONE MARKETING SOFTWARee
         </p>
         <h1 className="lg:text-[62px] text-[40px] font-bold leading-tight">
           Send emails, automate marketing, monetize content – in one place
