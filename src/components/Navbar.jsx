@@ -1,28 +1,34 @@
 import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
-import { RiArrowRightWideFill } from "react-icons/ri";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 
 
 
 
-const Navbar = () => {
-  const [isLogin, setIsLogin] = useState("true");
+const Navbar = ({ firstName, userEmail}) => {
+  const [isLogin, setIsLogin] = useState(false);
   const [isMobileNav, setIsMobileNav] = useState(false);
 
-  const Login = () => {
-    setIsLogin(false)
-    
-  }
-  let name = ("Esther")
+
+
+  
+
+   const Login = () => {
+    setIsLogin(true);
+  
+   };
+
 
   function ToggleNavBar() {
-    setIsMobileNav(!isMobileNav)
-  }
+    setIsMobileNav(!isMobileNav);
+  };
+
     return (
       <>
        <nav className="flex justify-between py-4 px-12">
@@ -57,14 +63,16 @@ const Navbar = () => {
         </div>
         <div onClick={ToggleNavBar} className="flex lg:hidden text-2xl z-10">{isMobileNav ? <MdOutlineClose/> : <RxHamburgerMenu/>}</div>
 
-       {isLogin ? <div className="lg:flex hidden gap-4 items-center font-bold">
+       {isLogin ?  <p className="font-semibold text-2xl"> !</p>  : <div className="lg:flex hidden gap-4 items-center font-bold">
             <Link to="/login">
-            <button onClick={Login} className="px-3 py-2 border-2 border-grey rounded-xl hover:text-[#00a2ff] hover:border-[#00a2ff]">Login</button>
+            <button 
+            onClick={Login} 
+            className="px-3 py-2 border-2 border-grey rounded-xl hover:text-[#00a2ff] hover:border-[#00a2ff]">Login</button>
             </Link>
             <Link to="/signup">
             <button className="px-3 py-2 bg-[#00a2ff] hover:bg-white hover:border-[#00a2ff] hover:border-2 hover:text-[#00a2ff] text-white rounded-xl">Sign up free</button>
             </Link>
-        </div> : <p className="font-semibold text-2xl">Hi, {name}!</p> }
+        </div>  }
        </nav> 
 
        {isMobileNav && <nav className="lg:hidden flex absolute right-0 top-0 bg-white h-screen w-[100%] p-6">
