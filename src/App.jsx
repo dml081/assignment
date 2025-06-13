@@ -14,6 +14,7 @@ import { UserProvider } from './context/UserContext';
 import { Provider } from 'react-redux';
 import { store } from './redux/Store';
 import Counter from './pages/Counter';
+import Todo from './pages/Todo';
 
 function App() {
   const[firstName, setFirstName] = useState("")
@@ -31,6 +32,8 @@ function App() {
     <Route path="/products" element={<Products/>}/>
     <Route path="/postpage" element={<PostPage/>}/>
     <Route path="/counter" element={<Counter/>}/>
+    <Route path="/todo" element={<Todo />}/>
+    
    </Routes>
 </Provider>
    </>

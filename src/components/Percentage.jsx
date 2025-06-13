@@ -1,4 +1,6 @@
-import React from 'react'
+import Aos from 'aos'
+import React, { useEffect } from 'react'
+import "aos/dist/aos.css";
 
 const stats = [
     {
@@ -24,8 +26,13 @@ const stats = [
 ]
 
 const Percentage = () => {
+
+    useEffect(() => {
+        Aos.init()
+    },[])
+
   return (
-    <div className='bg-gray-50 py-12 text-center'>
+    <div data-aos="flip-left" data-aos-duration="3000" className='bg-gray-50 py-12 text-center'>
         <h2 className='text-3xl font-bold mb-10'>Why GetResponse</h2>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto'>
             {stats.map((sam, index) => (

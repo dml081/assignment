@@ -6,11 +6,14 @@ const Counter = () => {
     const dispatch = useDispatch();
 
   return (
-    <div className="p-[150px]">
-      <button onClick={() => dispatch(decrement())}>-</button>
-      <span>{count}</span>
-      <button onClick={() => dispatch(increment())}>+</button>
-      <button onClick={() => dispatch(reset())}>Reset</button>
+    <div className="p-[150px] flex gap-5">
+      <div className="w-[200px] flex justify-between">
+        <button className="bg-red-400 hover:bg-red-300 px-6 py-1 rounded-md text-xl text-white" onClick={() => dispatch(decrement())}>-</button>
+      <span className="text-center text-2xl">{count}</span>
+      <button className="bg-green-400 hover:bg-green-300 px-6 py-1 rounded-md text-xl text-white" onClick={() => dispatch(increment())}>+</button>
+      <button className="hover:border-b-2 border-gray-600" onClick={() => dispatch(reset())}>Reset</button>
+      </div>
+      
     </div>
   );
 };
